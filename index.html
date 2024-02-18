@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>KnowItAll ChatBot</title>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-bubble">
+            <p>Hello! I'm KnowItAll. Ask me anything!</p>
+        </div>
+        <!-- Other chat bubbles will appear here -->
+    </div>
+
+    <script>
+        // Sample conversation array
+        const conversation = [];
+
+        // User input handler (you can adapt this to your UI)
+        function handleUserInput(input) {
+            conversation.push({ role: 'user', content: input });
+            // Send input to the API and get the AI response
+            // Display the response in the chat interface
+        }
+
+        // Example usage
+        handleUserInput("What's the capital of France?");
+    </script>
+</body>
+</html>
