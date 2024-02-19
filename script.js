@@ -1,32 +1,30 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const chatContainer = document.getElementById("chat-container");
-  const chat = document.getElementById("chat");
-  const userInput = document.getElementById("user-input");
+const chatBox = document.getElementById('chat-box');
+const userInput = document.getElementById('user-input');
 
-  function sendMessage() {
-    const userMessage = userInput.value;
-    if (userMessage.trim() === "") return;
-
-    // Display user message in the chat
-    chat.innerHTML += `<p>You: ${userMessage}</p>`;
-    userInput.value = "";
-
-    // Make a request to your server with the user's message
-    fetch("/get_response", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: `user_input=${encodeURIComponent(userMessage)}`,
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        // Display the bot's response in the chat
-        chat.innerHTML += `<p>Bot: ${data.response}</p>`;
-      })
-      .catch((error) => console.error("Error fetching response:", error));
+function sendMessage() {
+  const userMessage = userInput.value.trim();
+  
+  if (userMessage !== '') {
+    appendMessage('You', userMessage);
+    // Call function to generate bot response
+    const botResponse = generateBotResponse(userMessage);
+    appendMessage('Bot', botResponse);
+    userInput.value = '';
   }
+}
 
-  // Set up event listener for the "Send" button
-  document.getElementById("send-button").addEventListener("click", sendMessage);
-});
+function appendMessage(sender, message) {
+  const messageElement = document.createElement('p');
+  messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
+  chatBox.appendChild(messageElement);
+  // Automatically scroll to the bottom of the chat box
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+function generateBotResponse(userMessage) {
+  // Basic example of bot response generation
+  // You can replace this with more sophisticated logic
+  const greetings = ['Hello!', 'Hi there!', 'Hey!', 'Nice to meet you!'];
+  const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
+  return `${randomGreeting} How can I assist you?`;
+}
