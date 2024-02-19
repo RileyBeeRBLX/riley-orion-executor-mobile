@@ -26,5 +26,14 @@ function generateBotResponse(userMessage) {
   // You can replace this with more sophisticated logic
   const greetings = ['Hello!', 'Hi there!', 'Hey!', 'Nice to meet you!'];
   const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
-  return `${randomGreeting} How can I assist you?`;
+  
+  if (userMessage.toLowerCase().includes('script')) {
+    return `${randomGreeting} I can help you with scripting. What specific language or task do you need assistance with?`;
+  } else if (userMessage.toLowerCase().includes('generate')) {
+    return `${randomGreeting} I'm great at generating code snippets! What kind of code do you need generated?`;
+  } else if (userMessage.toLowerCase().includes('programming')) {
+    return `${randomGreeting} Programming is my specialty! What programming language are you working with?`;
+  } else {
+    return `${randomGreeting} How can I assist you?`;
+  }
 }
