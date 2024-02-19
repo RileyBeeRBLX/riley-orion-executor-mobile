@@ -4,6 +4,7 @@ const responses = {
     "how are you": "I'm just a computer program, but I'm functioning perfectly. How can I assist you?",
     "bye": "Goodbye! Have a great day!",
     "thanks": "You're welcome!",
+    "roblox gui": "Sure, I can help with that! What specific aspect of Roblox GUIs are you interested in?",
     "default": "I'm sorry, I didn't understand that."
 };
 
