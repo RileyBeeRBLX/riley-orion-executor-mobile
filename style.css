@@ -13,17 +13,29 @@ body {
   padding: 10px;
   height: 300px;
   overflow-y: scroll;
+  margin-bottom: 10px;
 }
 
 .chat-box p {
   margin: 5px 0;
 }
 
+.input-container {
+  display: flex;
+}
+
 input[type="text"] {
-  width: calc(100% - 70px);
+  flex: 1;
   padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
 }
 
 button {
   padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
 }
