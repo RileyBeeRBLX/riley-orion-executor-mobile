@@ -1,32 +1,38 @@
-const chatBox = document.getElementById('chat-box');
-const userInput = document.getElementById('user-input');
+// index.ts
+const url = 'https://api.together.xyz/v1/chat/completions';
+const apiKey = process.env.TOGETHER_API_KEY;
 
-function sendMessage() {
-    const userMessage = userInput.value.trim();
-    
-    if (userMessage !== '') {
-        appendMessage('You', userMessage);
-        // Call function to send user message to server
-        // and receive response from the chatbot AI
-        sendToServer(userMessage);
-        userInput.value = '';
-    }
-}
-
-function appendMessage(sender, message) {
-    const messageElement = document.createElement('p');
-    messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
-    chatBox.appendChild(messageElement);
-    // Automatically scroll to the bottom of the chat box
-    chatBox.scrollTop = chatBox.scrollHeight;
-}
-
-document.getElementById('send-button').addEventListener('click', function() {
-    sendMessage();
+const headers = new Headers({
+  'Content-Type': 'application/json',
+  Authorization: `Bearer ${apiKey}`,
 });
 
-userInput.addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-        sendMessage();
-    }
-});
+const data = {
+  model: 'mistralai/Mixtral-8x7B-Instruct-v0.1',
+  max_tokens: 1024,
+  messages: [
+    {
+      role: 'system',
+      content: 'You are an AI assistant',
+    },
+    {
+      role: 'user',
+      content: 'Who won the world series in 2020?',
+    },
+  ],
+};
+
+const options = {
+  method: 'POST',
+  headers,
+  body: JSON.stringify(data),
+};
+
+fetch(url, options)
+  .then((response) => response.json())
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
