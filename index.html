@@ -1,19 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot AI</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="chat-container">
-        <div class="chat-box" id="chat-box"></div>
-        <div class="input-container">
-            <input type="text" placeholder="Type your message..." id="user-input">
-            <button id="send-button">Send</button>
-        </div>
-    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RileyBeeRBLX Website!</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="script.js"></script>
-</body>
+    <script src="https://unpkg.com/scrollreveal"></script>
+  </head>
+
+  <body>
+    <canvas class="orb-canvas"></canvas>
+
+    <div class="overlay">
+      <div class="overlay__inner">
+        <h1 class="overlay__title">
+          Welcome to
+          <span
+            style="
+              background: linear-gradient(to right, #5f06f8, #ce06b8);
+              -webkit-background-clip: text;
+              background-clip: text;
+              -webkit-text-fill-color: transparent;
+            "
+            >RileyBeeRBLX</span
+          >
+          Website!
+          <span class="overlay__title-emoji">👋</span>
+        </h1>
+
+        <p class="overlay__description">
+          Hello I Am Riley A Beginner Dev/Programmer
+          And Welcome To My Website (Credit To Noah And Icme)
+        </p>
+
+        <div class="overlay__btns">
+          <button class="overlay__btn overlay__btn--transparent">
+            <a
+              href="https://discord.gg/7aZ4z5jJcw"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Join My Server
+            </a>
+          </button>
+
+          <button class="overlay__btn overlay__btn--colors">
+            <a
+              href="https://discord.com/api/oauth2/authorize?client_id=1195630548958334996&permissions=8&scope=bot"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Invite My Bot!
+            </a>
+            <span class="overlay__btn-emoji">⭐️</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const sr = ScrollReveal();
+
+      sr.reveal("h1, p, span, strong, a", {
+        origin: "bottom",
+        distance: "50px",
+        duration: 1000,
+      });
+    </script>
+  </body>
 </html>
