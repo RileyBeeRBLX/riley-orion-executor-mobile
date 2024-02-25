@@ -1,38 +1,16 @@
-// index.ts
-const url = 'https://api.together.xyz/v1/chat/completions';
-const apiKey = process.env.TOGETHER_API_KEY;
+// [!] This code hasn't been tested yet.
+// It may work or may not!
+// TODO: Find testers
 
-const headers = new Headers({
-  'Content-Type': 'application/json',
-  Authorization: `Bearer ${apiKey}`,
-});
+const defaultLocale = "en-US";
 
-const data = {
-  model: 'mistralai/Mixtral-8x7B-Instruct-v0.1',
-  max_tokens: 1024,
-  messages: [
-    {
-      role: 'system',
-      content: 'You are an AI assistant',
-    },
-    {
-      role: 'user',
-      content: 'Who won the world series in 2020?',
-    },
-  ],
-};
+const locale =
+  navigator.language ||
+  (navigator.languages && navigator.languages[0]) ||
+  defaultLocale;
 
-const options = {
-  method: 'POST',
-  headers,
-  body: JSON.stringify(data),
-};
-
-fetch(url, options)
-  .then((response) => response.json())
-  .then((result) => {
-    console.log(result);
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-  });
+if (locale.startsWith("vi")) {
+  window.location.href = "/vn"; // vietnamese version
+} else if (locale === "id-ID") {
+  window.location.href = "/id"; // indonesian version
+}
