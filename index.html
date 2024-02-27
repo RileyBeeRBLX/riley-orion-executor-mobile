@@ -1,72 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Riley Orion Executor Mobile (iOS)/(Android)</title>
+	<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6CD6L0E2QR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="script.js"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
-  </head>
+  gtag('config', 'G-6CD6L0E2QR');
+</script>
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="preconnect" href="https://fonts.googleapis.com"> 
 
-  <body>
-    <canvas class="orb-canvas"></canvas>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+		
+		<meta charset="utf-8" />
+		<link rel='stylesheet' href='./main.css'>
+		<link rel="icon" href="./favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta http-equiv="content-security-policy" content="">
+		<link rel="modulepreload" href="./internal/immutable/start-a5762421.js">
+		<link rel="modulepreload" href="./internal/immutable/chunks/index-dd9771d8.js">
+		<link rel="modulepreload" href="./internal/immutable/chunks/singletons-b9f1325e.js">
+	</head>
+	<!-- AdMaven -->
+    <script data-cfasync="false" src="//d3bbyfw7v2aifi.cloudfront.net/?fybbd=955673"></script>
+    <script data-cfasync="false" src="//d3bbyfw7v2aifi.cloudfront.net/?fybbd=955671"></script>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">
+		<script type="module" data-sveltekit-hydrate="45h">
+			import { start } from "./internal/immutable/start-a5762421.js";
 
-    <div class="overlay">
-      <div class="overlay__inner">
-        <h1 class="overlay__title">
-          Welcome to
-          <span
-            style="
-              background: linear-gradient(to right, #5f06f8, #ce06b8);
-              -webkit-background-clip: text;
-              background-clip: text;
-              -webkit-text-fill-color: transparent;
-            "
-            >RileyBeeRBLX</span
-          >
-          Website!
-          <span class="overlay__title-emoji">👋</span>
-        </h1>
-
-        <p class="overlay__description">
-      Hi Welcome To Riley Orion Executor Mobile!
-        </p>
-
-        <div class="overlay__btns">
-          <button class="overlay__btn overlay__btn--transparent">
-            <a
-              href="https://discord.gg/7aZ4z5jJcw"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Join My Server
-            </a>
-          </button>
-
-          <button class="overlay__btn overlay__btn--colors">
-            <a
-              href="https://work.ink/1TAa/lt40prrq"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Riley Orion Executor Mobile! [DOWNLOAD]
-            </a>
-            <span class="overlay__btn-emoji">⭐️</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <script>
-      const sr = ScrollReveal();
-
-      sr.reveal("h1, p, span, strong, a", {
-        origin: "bottom",
-        distance: "50px",
-        duration: 1000,
-      });
-    </script>
-  </body>
+			start({
+				env: {},
+				paths: {"base":"","assets":""},
+				target: document.querySelector('[data-sveltekit-hydrate="45h"]').parentNode,
+				version: "1671514617208"
+			});
+		</script></div>
+	</body>
 </html>
