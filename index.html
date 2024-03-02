@@ -1,0 +1,22 @@
+
+<form method="post" action="https://api.casp.dev/upload.php" enctype="multipart/form-data" id="uploadForm" name="uploadForm">
+      <label>3 GB limit.</label>
+      <label for="name">App Name</label>
+      <input type="text" id="name" name="name" placeholder="Example: Name Here" required="">
+
+      <label for="p12">.P12 File</label>
+      <input type="file" id="p12" name="p12" accept=".p12" required="">
+
+      <label for="mobileprovision">.MobileProvision File</label>
+      <input type="file" id="mobileprovision" name="mobileprovision" accept=".mobileprovision" required="">
+
+      <label for="ipa">.IPA File</label>
+      <input type="file" id="ipa" name="ipa" accept=".ipa" required="">
+
+      <label for="pass">Password of the certificate</label>
+      <input type="password" id="pass" name="pass" placeholder="Example: AppleP12.com" required="">
+      <center>
+        <input type="submit" class="button" value="SIGN">
+      </center>
+    </form>
+    
