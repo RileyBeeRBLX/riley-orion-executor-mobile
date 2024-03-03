@@ -3,12 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflix Login</title>
-    <!-- Add your CSS file here for styling -->
+    <title>Login and Register</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1d1f21;
+        }
+        .container {
+            width: 360px;
+            background-color: #2d2f33;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 16px;
+            width: 100%;
+        }
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #fff;
+            background-color: #3d3f43;
+            border: none;
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(255, 255, 255, 0.1);
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            box-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #e50914;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #d40810;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>Welcome back to Netflix</h1>
+        <h1>Login</h1>
         <form action="#" method="post">
             <div class="form-group">
                 <label for="email">Email or phone number</label>
@@ -20,13 +88,16 @@
             </div>
             <button type="submit">Sign In</button>
         </form>
-        <div class="links">
-            <a href="#">Need help?</a>
-            <span> · </span>
-            <a href="#">Privacy Policy</a>
-            <span> · </span>
-            <a href="#">Terms of Use</a>
-        </div>
-    </div>
-</body>
-</html>
+        <h2>Or</h2>
+        <h1>Register</h1>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label
