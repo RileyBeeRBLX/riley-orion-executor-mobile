@@ -12,9 +12,9 @@
     </header>
     <main>
         <form id="uploadForm" enctype="multipart/form-data">
-            <input type="file" id="ipaFile" name="ipaFile" accept=".ipa">
-            <input type="file" id="p12File" name="p12File" accept=".p12">
-            <input type="file" id="mobileprovisionFile" name="mobileprovisionFile" accept=".mobileprovision">
+            <input type="file" id="ipaFile" name="ipaFile" accept=".ipa" required>
+            <input type="file" id="p12File" name="p12File" accept=".p12" required>
+            <input type="file" id="mobileprovisionFile" name="mobileprovisionFile" accept=".mobileprovision" required>
             <button type="submit">Sign App</button>
         </form>
         <div id="result"></div>
