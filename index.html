@@ -1,38 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Auth0 Login Page</title>
-  <script src="https://cdn.auth0.com/js/auth0/10.12.0/auth0.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://cdn.auth0.com/styles/css/global/global.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Login</title>
+    <!-- Add your CSS file here for styling -->
 </head>
 <body>
-  <div id="auth0-lock" class="auth0-lock"></div>
-  <script>
-    var auth0 = new auth0.WebAuth({
-      domain:       'your-auth0-domain',
-      clientID:     'your-auth0-client-id',
-      redirectUri:  'http://localhost:8080/callback',
-      audience:     'your-auth0-api-audience',
-      responseType: 'code',
-      scope:        'openid email'
-    });
-
-    var lock = new Auth0Lock(auth0.clientID, auth0.domain, {
-      allowSignUp: false,
-      rememberLastLogin: false
-    });
-
-    lock.on("authenticated", function(authResult) {
-      auth0.parseHash(authResult, function(err, authResult) {
-        if (err) return console.error(err);
-        location.hash = '';
-        location.pathname = '/callback';
-        location.search = '?code=' + authResult.code;
-      });
-    });
-
-    lock.show();
-  </script>
+    <div class="container">
+        <h1>Welcome back to Netflix</h1>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="email">Email or phone number</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Sign In</button>
+        </form>
+        <div class="links">
+            <a href="#">Need help?</a>
+            <span> · </span>
+            <a href="#">Privacy Policy</a>
+            <span> · </span>
+            <a href="#">Terms of Use</a>
+        </div>
+    </div>
 </body>
 </html>
