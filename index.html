@@ -1,23 +1,24 @@
-document.getElementById('uploadForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    var formData = new FormData();
-    formData.append('ipaFile', document.getElementById('ipaFile').files[0]);
-    formData.append('p12File', document.getElementById('p12File').files[0]);
-    formData.append('mobileprovisionFile', document.getElementById('mobileprovisionFile').files[0]);
-
-    fetch('/sign', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            document.getElementById('result').innerHTML = `<a href="${data.downloadLink}" download>Download Signed App</a>`;
-        } else {
-            document.getElementById('result').innerText = data.error;
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-});    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS App Signer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>iOS App Signer</h1>
+    </header>
+    <main>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <input type="file" id="ipaFile" name="ipaFile" accept=".ipa">
+            <input type="file" id="p12File" name="p12File" accept=".p12">
+            <input type="file" id="mobileprovisionFile" name="mobileprovisionFile" accept=".mobileprovision">
+            <button type="submit">Sign App</button>
+        </form>
+        <div id="result"></div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
