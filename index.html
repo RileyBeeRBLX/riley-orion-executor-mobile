@@ -1,95 +1,102 @@
 <!DOCTYPE html>
-<html>
-
-  <head>
-    <title>Login Page</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
     <style>
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: #222;
-      }
-
-      .login-box {
-        background-color: #fff;
-        padding: 30px;
-        border-radius: 4px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .login-title {
-        text-align: center;
-        font-size: 2rem;
-        font-weight: bold;
-        margin-bottom: 30px;
-      }
-
-      .form-group {
-        margin-bottom: 20px;
-      }
-
-      label {
-        display: block;
-        font-size: 1.1rem;
-        font-weight: bold;
-        margin-bottom: 5px;
-      }
-
-      input[type="text"],
-      input[type="password"] {
-        width: 100%;
-        padding: 12px;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-        font-size: 1.1rem;
-      }
-
-      button {
-        width: 100%;
-        padding: 12px;
-        background-color: #2e7d32;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        font-size: 1.1rem;
-        cursor: pointer;
-      }
-
-      .register-link {
-        text-align: center;
-        margin-top: 20px;
-        font-size: 0.9rem;
-      }
-
-      .register-link a {
-        color: #2e7d32;
-        text-decoration: none;
-      }
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1d1f21;
+        }
+        .container {
+            width: 360px;
+            background-color: #2d2f33;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 16px;
+            width: 100%;
+        }
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #fff;
+            background-color: #3d3f43;
+            border: none;
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(255, 255, 255, 0.1);
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            box-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #e50914;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #d40810;
+        }
+        a {
+            display: block;
+            font-size: 14px;
+            color: #fff;
+            text-align: center;
+            margin-top: 16px;
+            text-decoration: none;
+        }
     </style>
-  </head>
-
-  <body>
-
-    <div class="login-box">
-      <div class="login-title">Login</div>
-      <form>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="text" id="email" placeholder="email" />
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" placeholder="password" />
-        </div>
-        <button onclick="location.href='https://www.yourwebsite.com';">Sign In</button>
-      </form>
-      <div class="register-link">
-        Don't have an account? <a href="https://www.yourwebsite.com/register">Register here</a>
-      </div>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form action="https://www.example.com/register" method="post">
+            <div class="form-group">
+                <label for="email">Email or phone number</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
+        <a href="https://www.example.com/register">Don't have an account? Register here</a>
     </div>
-
-  </body>
-
+</body>
 </html>
